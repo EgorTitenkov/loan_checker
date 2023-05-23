@@ -1,6 +1,6 @@
 from django.db import models
 
-from DjangoAPI.MyAPI.models.approvals_model import Approvals
+from MyAPI.models.approvals_model import Approvals
 
 
 class Income(models.Model):

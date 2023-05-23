@@ -1,6 +1,6 @@
 from django.db import models
 
-from DjangoAPI.MyAPI.models.choices_models import status_choices
+from MyAPI.models.choices_models import status_choices
 
 
 class client_status(models.Model):

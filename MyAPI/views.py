@@ -8,12 +8,12 @@ from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from .models import approvals
+from .models import Approvals
 from .serializers import ApprovalsSerializer
 
 
 class ApprovalsView(viewsets.ModelViewSet):
-    queryset = approvals.objects.all()
+    queryset = Approvals.objects.all()
     serializer_class = ApprovalsSerializer
 
 

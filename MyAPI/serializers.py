@@ -1,11 +1,11 @@
 from rest_framework import serializers
 
-from .models import approvals
+from MyAPI.models import Approvals
 
 
 class ApprovalsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = approvals,
+        model = Approvals,
         fields = '__all__'
 
 

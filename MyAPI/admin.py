@@ -1,8 +1,7 @@
 from django.contrib import admin
 
-from .models import approvals
-
-admin.site.register(approvals)
+from .models.approvals_model import Approvals
+admin.site.register(Approvals)
 
 
 

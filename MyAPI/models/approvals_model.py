@@ -1,9 +1,9 @@
 import area as area
 from django.db import models
 
-from DjangoAPI.MyAPI.models.choices_models import gender_choices, married_status, graduate_status, self_employed
-from DjangoAPI.MyAPI.models.client_status_model import client_status
-from DjangoAPI.MyAPI.models.credit_history_model import CreditHistory
+from MyAPI.models.choices_models import gender_choices, married_status, graduate_status, self_employed, area
+from MyAPI.models.client_status_model import client_status
+from MyAPI.models.credit_history_model import CreditHistory
 
 
 class Approvals(models.Model):
@@ -23,11 +23,8 @@ class Approvals(models.Model):
     gender = models.CharField(max_length=15, choices=gender_choices.choices)
     married = models.CharField(max_length=15, choices=married_status.choices)
     graduatededucation = models.CharField(max_length=15, choices=graduate_status.choices)
-    selfemployed = models.CharField(max_length=15, choices=self_employed.choices)
+    selfemployed = models.CharField(max_length=20, choices=self_employed.choices)
     area = models.CharField(max_length=15, choices=area.choices)
-
-    def __str__(self):
-        return self.firstname
 
     def __str__(self):
         return self.firstname

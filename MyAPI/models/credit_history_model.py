@@ -1,11 +1,9 @@
 from django.db import models
 
-from DjangoAPI.MyAPI.models.approvals_model import Approvals
-
 
 class CreditHistory(models.Model):
     client = models.OneToOneField(
-        Approvals, on_delete=models.CASCADE, related_name="credit_history"
+        "MyAPI.Approvals", on_delete=models.CASCADE, related_name="credit_history"
     )
     credit_score = models.IntegerField(help_text="Credit score")
     late_payments = models.IntegerField(default=0, help_text="Number of late payments")
