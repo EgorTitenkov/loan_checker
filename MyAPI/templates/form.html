@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пример формы с использованием Bootstrap</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+                background-color: #ff7f50;
+            }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Форма обратной связи</h2>
+    <form action="{% url 'form_handler' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="firstname">Имя:</label>
+            <input class="form-control" id="firstname" name="name" required type="text">
+        </div>
+        <div class="form-group">
+            <label for="surname">Фамилия:</label>
+            <input class="form-control" id="surname" name="surname" required>
+        </div>
+        <div class="form-group">
+            <label for="dependants">Занятый:</label>
+            <input class="form-control" id="dependants" name="dependants" required type="common"></input>
+        </div>
+        <div class="form-group">
+            <label for="applicantincome">Размер заработной платы заявителя:</label>
+            <input class="form-control" id="applicantincome" name="applicantincome" required type="common"></input>
+        </div>
+        <div class="form-group">
+            <label for="coapplicantincome">Размер заработной платы созаявителя:</label>
+            <input class="form-control" id="coapplicantincome" name="coapplicantincome" required type="common"></input>
+        </div>
+        <div class="form-group">
+            <label for="loanamt">Сумма займа:</label>
+            <input class="form-control" id="loanamt" name="loanamt" required type="common"></input>
+        </div>
+        <div class="form-group">
+            <label for="loanterm">Период займа:</label>
+            <input class="form-control" id="loanterm" name="loanterm" required type="common"></input>
+        </div>
+        <div class="form-group">
+            <label for="credithstory">Кредитная история:</label>
+            <input class="form-control" id="credithstory" name="credithstory" required type="common"></input>
+        </div>
+        <select class="form-group" name="gender">
+            <option class="form-control" value="Male">Male</option>
+            <option class="form-control" value="Female">Female</option>
+        </select>
+
+        <select class="form-group" name="married">
+            <option class="form-control" value="Yes">Yes</option>
+            <option class="form-control" value="No">No</option>
+        </select>
+
+        <select class="form-group" name="graduated">
+            <option class="form-control" value="Graduate">Graduated</option>
+            <option class="form-control" value="Not_Graduate">Not Graduated</option>
+        </select>
+
+        <select class="form-group" name="self_employed">
+            <option class="form-control" value="Yes">Yes</option>
+            <option class="form-control" value="No">No</option>
+        </select>
+
+        <select class="form-group" name="property">
+            <option class="form-control" value="Belarus">Belarus</option>
+            <option class="form-control" value="Russia">Russia</option>
+            <option class="form-control" value="USA">USA</option>
+        </select>
+
+        <button class="btn btn-primary" type="submit">Отправить</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+</body>
