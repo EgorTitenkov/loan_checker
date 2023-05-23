@@ -6,7 +6,7 @@ from DjangoAPI.MyAPI.models.client_status_model import client_status
 from DjangoAPI.MyAPI.models.credit_history_model import CreditHistory
 
 
-class approvals(models.Model):
+class Approvals(models.Model):
     client = models.OneToOneField(
         client_status, on_delete=models.CASCADE, related_name="approvals"
     )
@@ -25,6 +25,9 @@ class approvals(models.Model):
     graduatededucation = models.CharField(max_length=15, choices=graduate_status.choices)
     selfemployed = models.CharField(max_length=15, choices=self_employed.choices)
     area = models.CharField(max_length=15, choices=area.choices)
+
+    def __str__(self):
+        return self.firstname
 
     def __str__(self):
         return self.firstname
